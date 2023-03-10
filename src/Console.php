@@ -1,10 +1,12 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Kiboko\Component\Runtime\Action;
 
 use Kiboko\Component\State;
-use Kiboko\Contract\Action\ActionState;
 use Kiboko\Contract\Action\ActionInterface;
+use Kiboko\Contract\Action\ActionState;
 use Kiboko\Contract\Action\ExecutingActionInterface;
 use Kiboko\Contract\Action\RejectionInterface;
 use Kiboko\Contract\Action\StateInterface;
@@ -32,7 +34,8 @@ final class Console implements ActionRuntimeInterface
         $this->state
             ->addMetric('read', $state->observeAccept())
             ->addMetric('error', fn () => 0)
-            ->addMetric('rejected', $state->observeReject());
+            ->addMetric('rejected', $state->observeReject())
+        ;
 
         return $this;
     }

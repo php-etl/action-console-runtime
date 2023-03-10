@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Kiboko\Component\Runtime\Action;
 
@@ -13,5 +15,5 @@ interface ActionRuntimeInterface extends RunnableInterface
         ActionInterface $action,
         RejectionInterface $rejection,
         StateInterface $state
-    ): ActionRuntimeInterface;
+    ): self;
 }

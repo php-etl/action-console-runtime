@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28d78bb80ae1ec116e5227b9d6746393",
+    "content-hash": "7b35da18552397fe3ab07110e1acb3ef",
     "packages": [
         {
             "name": "php-etl/action-contracts",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-etl/action-contracts.git",
-                "reference": "e08d3c8686762efcb46240a09a66c8eb07c7bb6c"
+                "reference": "3b16ddb5f97926117ab56ddb9e9f29f793206c48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-etl/action-contracts/zipball/e08d3c8686762efcb46240a09a66c8eb07c7bb6c",
-                "reference": "e08d3c8686762efcb46240a09a66c8eb07c7bb6c",
+                "url": "https://api.github.com/repos/php-etl/action-contracts/zipball/3b16ddb5f97926117ab56ddb9e9f29f793206c48",
+                "reference": "3b16ddb5f97926117ab56ddb9e9f29f793206c48",
                 "shasum": ""
             },
             "require": {
@@ -25,7 +25,7 @@
                 "php-etl/bucket-contracts": "^0.1.0"
             },
             "require-dev": {
-                "rector/rector": "^0.15"
+                "rector/rector": "^0.15.0"
             },
             "default-branch": true,
             "type": "library",
@@ -58,7 +58,7 @@
                 "issues": "https://github.com/php-etl/action-contracts/issues",
                 "source": "https://github.com/php-etl/action-contracts/tree/main"
             },
-            "time": "2023-03-10T10:42:37+00:00"
+            "time": "2023-03-10T10:53:23+00:00"
         },
         {
             "name": "php-etl/bucket-contracts",
