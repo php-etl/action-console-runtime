@@ -15,7 +15,6 @@ jobs:
         with:
           args: --prefer-dist
           php_version: 8.2
-
       - name: PHPStan
         uses: php-actions/phpstan@v3
         with:

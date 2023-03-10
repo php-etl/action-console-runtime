@@ -3,10 +3,11 @@
 namespace Kiboko\Component\Runtime\Action;
 
 use Kiboko\Component\State;
-use Kiboko\Contract\Pipeline\ActionInterface;
-use Kiboko\Contract\Pipeline\ExecutingActionInterface;
-use Kiboko\Contract\Pipeline\RejectionInterface;
-use Kiboko\Contract\Pipeline\StateInterface;
+use Kiboko\Contract\Action\ActionState;
+use Kiboko\Contract\Action\ActionInterface;
+use Kiboko\Contract\Action\ExecutingActionInterface;
+use Kiboko\Contract\Action\RejectionInterface;
+use Kiboko\Contract\Action\StateInterface;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
 final class Console implements ActionRuntimeInterface
@@ -26,7 +27,7 @@ final class Console implements ActionRuntimeInterface
         RejectionInterface $rejection,
         StateInterface $state,
     ): self {
-        $this->action->execute($action, $rejection, $state = new State\MemoryState($state));
+        $this->action->execute($action, $rejection, $state = new ActionState($state));
 
         $this->state
             ->addMetric('read', $state->observeAccept())
@@ -38,14 +39,8 @@ final class Console implements ActionRuntimeInterface
 
     public function run(int $interval = 1000): int
     {
-        $line = 0;
-        foreach ($this->action->walk() as $item) {
-            if ($line++ % $interval === 0) {
-                $this->state->update();
-            }
-        };
         $this->state->update();
 
-        return $line;
+        return 1;
     }
 }

@@ -4,8 +4,62 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb9479fabfc37ebb5df6a1c6fe6e136d",
+    "content-hash": "28d78bb80ae1ec116e5227b9d6746393",
     "packages": [
+        {
+            "name": "php-etl/action-contracts",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-etl/action-contracts.git",
+                "reference": "e08d3c8686762efcb46240a09a66c8eb07c7bb6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-etl/action-contracts/zipball/e08d3c8686762efcb46240a09a66c8eb07c7bb6c",
+                "reference": "e08d3c8686762efcb46240a09a66c8eb07c7bb6c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2",
+                "php-etl/bucket-contracts": "^0.1.0"
+            },
+            "require-dev": {
+                "rector/rector": "^0.15"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kiboko\\Contract\\Pipeline\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kiboko SAS",
+                    "homepage": "http://kiboko.fr"
+                },
+                {
+                    "name": "Grégory Planchat",
+                    "email": "gregory@kiboko.fr"
+                }
+            ],
+            "description": "This library describes contracts for the Action pattern.",
+            "support": {
+                "issues": "https://github.com/php-etl/action-contracts/issues",
+                "source": "https://github.com/php-etl/action-contracts/tree/main"
+            },
+            "time": "2023-03-10T10:42:37+00:00"
+        },
         {
             "name": "php-etl/bucket-contracts",
             "version": "v0.1.0",

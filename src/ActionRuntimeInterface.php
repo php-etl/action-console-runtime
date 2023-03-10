@@ -2,10 +2,10 @@
 
 namespace Kiboko\Component\Runtime\Action;
 
-use Kiboko\Contract\Pipeline\ActionInterface;
-use Kiboko\Contract\Pipeline\RejectionInterface;
-use Kiboko\Contract\Pipeline\RunnableInterface;
-use Kiboko\Contract\Pipeline\StateInterface;
+use Kiboko\Contract\Action\ActionInterface;
+use Kiboko\Contract\Action\RejectionInterface;
+use Kiboko\Contract\Action\RunnableInterface;
+use Kiboko\Contract\Action\StateInterface;
 
 interface ActionRuntimeInterface extends RunnableInterface
 {
