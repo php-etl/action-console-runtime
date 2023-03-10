@@ -11,11 +11,11 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 
 final class Console implements ActionRuntimeInterface
 {
-    private State\StateOutput\Action $state;
+    private readonly State\StateOutput\Action $state;
 
     public function __construct(
         ConsoleOutput $output,
-        private ExecutingActionInterface $action,
+        private readonly ExecutingActionInterface $action,
         ?State\StateOutput\Action $state = null
     ) {
         $this->state = $state ?? new State\StateOutput\Action($output, 'A', 'Action');
