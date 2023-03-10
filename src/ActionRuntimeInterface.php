@@ -1,11 +1,13 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Kiboko\Component\Runtime\Action;
 
-use Kiboko\Contract\Pipeline\ActionInterface;
-use Kiboko\Contract\Pipeline\RejectionInterface;
-use Kiboko\Contract\Pipeline\RunnableInterface;
-use Kiboko\Contract\Pipeline\StateInterface;
+use Kiboko\Contract\Action\ActionInterface;
+use Kiboko\Contract\Action\RejectionInterface;
+use Kiboko\Contract\Action\RunnableInterface;
+use Kiboko\Contract\Action\StateInterface;
 
 interface ActionRuntimeInterface extends RunnableInterface
 {
@@ -13,5 +15,5 @@ interface ActionRuntimeInterface extends RunnableInterface
         ActionInterface $action,
         RejectionInterface $rejection,
         StateInterface $state
-    ): ActionRuntimeInterface;
+    ): self;
 }
