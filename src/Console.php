@@ -8,7 +8,6 @@ use Kiboko\Component\State;
 use Kiboko\Contract\Action\ActionInterface;
 use Kiboko\Contract\Action\ActionState;
 use Kiboko\Contract\Action\ExecutingActionInterface;
-use Kiboko\Contract\Action\RejectionInterface;
 use Kiboko\Contract\Action\StateInterface;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
@@ -26,10 +25,9 @@ final class Console implements ActionRuntimeInterface
 
     public function execute(
         ActionInterface $action,
-        RejectionInterface $rejection,
         StateInterface $state,
     ): self {
-        $this->action->execute($action, $rejection, $state = new ActionState($state));
+        $this->action->execute($action, $state = new ActionState($state));
 
         $this->state
             ->addMetric('read', $state->observeAccept())
