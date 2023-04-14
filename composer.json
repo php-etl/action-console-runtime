@@ -17,9 +17,9 @@
     "prefer-stable": true,
     "require": {
         "php": "^8.2",
-        "symfony/console": "^5.2",
-        "php-etl/console-state": "^0.1.0",
-        "php-etl/action-contracts": "^0.1.0"
+        "php-etl/console-state": "*",
+        "php-etl/action-contracts": "0.1.*",
+        "symfony/console": "^6.0"
     },
     "autoload": {
         "psr-4": {
