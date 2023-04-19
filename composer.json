@@ -19,6 +19,7 @@
         "php": "^8.2",
         "php-etl/console-state": "*",
         "php-etl/action-contracts": "0.1.*",
+        "php-etl/satellite-contracts": "0.1.*",
         "symfony/console": "^6.0"
     },
     "autoload": {

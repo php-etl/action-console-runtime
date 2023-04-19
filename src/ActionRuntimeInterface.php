@@ -6,7 +6,7 @@ namespace Kiboko\Component\Runtime\Action;
 
 use Kiboko\Contract\Action\ActionInterface;
 use Kiboko\Contract\Action\StateInterface;
-use Kiboko\Contract\Job\RunnableInterface;
+use Kiboko\Contract\Satellite\RunnableInterface;
 
 interface ActionRuntimeInterface extends RunnableInterface
 {
