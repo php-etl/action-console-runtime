@@ -6,7 +6,6 @@ namespace Kiboko\Component\Runtime\Action;
 
 use Kiboko\Component\State;
 use Kiboko\Contract\Action\ActionInterface;
-use Kiboko\Contract\Action\ActionState;
 use Kiboko\Contract\Action\ExecutingActionInterface;
 use Kiboko\Contract\Action\StateInterface;
 use Symfony\Component\Console\Output\ConsoleOutput;
@@ -30,9 +29,8 @@ final class Console implements ActionRuntimeInterface
         $this->action->execute($action, $state = new ActionState($state));
 
         $this->state
-            ->addMetric('read', $state->observeAccept())
-            ->addMetric('error', fn () => 0)
-            ->addMetric('rejected', $state->observeReject())
+            ->addMetric('state', $state->observeState())
+            ->addMetric('result', $state->observeResult())
         ;
 
         return $this;
