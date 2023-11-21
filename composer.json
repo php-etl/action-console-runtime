@@ -17,10 +17,10 @@
     "prefer-stable": true,
     "require": {
         "php": "^8.2",
-        "php-etl/console-state": "*",
         "php-etl/action-contracts": "0.2.*",
         "php-etl/satellite-contracts": "0.1.*",
-        "symfony/console": "^6.0"
+        "symfony/console": "^6.0",
+        "php-etl/action": "*"
     },
     "autoload": {
         "psr-4": {

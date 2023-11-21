@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Kiboko\Component\Runtime\Action;
 
-use Kiboko\Component\State;
+use Kiboko\Component\Action\ActionState;
 use Kiboko\Contract\Action\ActionInterface;
 use Kiboko\Contract\Action\ExecutingActionInterface;
 use Kiboko\Contract\Action\StateInterface;
@@ -12,14 +12,14 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 
 final class Console implements ActionRuntimeInterface
 {
-    private readonly State\StateOutput\Action $state;
+    private readonly Action $state;
 
     public function __construct(
         ConsoleOutput $output,
         private readonly ExecutingActionInterface $action,
-        ?State\StateOutput\Action $state = null
+        ?Action $state = null
     ) {
-        $this->state = $state ?? new State\StateOutput\Action($output, 'A', 'Action');
+        $this->state = $state ?? new Action($output, 'A', 'Action');
     }
 
     public function execute(
@@ -28,10 +28,7 @@ final class Console implements ActionRuntimeInterface
     ): self {
         $this->action->execute($action, $state = new ActionState($state));
 
-        $this->state
-            ->addMetric('state', $state->observeState())
-            ->addMetric('result', $state->observeResult())
-        ;
+        $this->state->addMetric('state', $state->observeState());
 
         return $this;
     }
